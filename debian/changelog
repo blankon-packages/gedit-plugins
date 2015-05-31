@@ -1,0 +1,392 @@
+gedit-plugins (3.16.0-0blankon1) tambora; urgency=medium
+
+  * New upstream release
+  * Import from PPA GNOME3-TEAM
+
+ -- Mahyuddin <yudi.al@gmail.com>  Sun, 31 May 2015 14:49:17 +0700
+
+gedit-plugins (3.16.0-0ubuntu1~vivid1) vivid; urgency=medium
+
+  * New upstream release
+  * Bump build-dep on gedit (>= 3.16.0)
+ -- Tim Lunn <tim@feathertop.org>  Thu, 26 Mar 2015 09:45:38 +1100
+
+gedit-plugins (3.15.0-0ubuntu1~vivid1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Rico Tzschichholz <ricotz@ubuntu.com>  Mon, 09 Mar 2015 08:17:12 +0100
+
+gedit-plugins (3.14.1-0ubuntu1~vivid1) vivid; urgency=medium
+
+  * New upstream release
+  * debian/control.in:
+    - Bump build-deps accordingly
+
+ -- Rico Tzschichholz <ricotz@ubuntu.com>  Fri, 27 Feb 2015 14:19:06 +0100
+
+gedit-plugins (3.12.1-0ubuntu1~trusty1) trusty; urgency=medium
+
+  * New upstream release
+  * debian/control.in:
+    - Bump build-dep on gedit (>= 3.11.3)
+
+ -- Rico Tzschichholz <ricotz@ubuntu.com>  Fri, 18 Apr 2014 09:45:37 +0200
+
+gedit-plugins (3.10.1-1ubuntu2) trusty; urgency=medium
+
+  * Don't use a python3.x shebang.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sat, 22 Feb 2014 15:59:57 +0100
+
+gedit-plugins (3.10.1-1ubuntu1) trusty; urgency=low
+
+  * Merge from Debian unstable.  Remaining changes:
+    - debian/control{.in}:
+      + Build-Depends on itstool.
+      + Updated gedit, gtk, gtksourceview requirements.
+
+ -- Artur Rona <ari-tczew@ubuntu.com>  Wed, 19 Feb 2014 00:03:01 +0100
+
+gedit-plugins (3.10.1-1) unstable; urgency=low
+
+  [ Jean Schurger ]
+  * New upstream release
+  * Update 'gedit-dev' and 'libgtk-3-dev' according to configure.ac
+  * Drop mark-git-plugin-translatable.patch: merged upstream
+  * Update Vcs fields
+
+  [ Laurent Bigonville ]
+  * debian/control.in:
+    - Depends against gir1.2-zeitgeist-2.0 now that zeitgeist-2.0 is packaged
+    - Update Homepage URL
+    - Bump Standards-Version to 3.9.5 (no further changes)
+    - Add yelp-tools to the build-dependencies
+    - Add python3-gi, python3-gi-cairo, python3-cairo and python3-dbus to the
+      dependencies, some plugins require these.
+
+ -- Laurent Bigonville <bigon@debian.org>  Mon, 17 Feb 2014 14:45:45 +0100
+
+gedit-plugins (3.10.1-0ubuntu3) trusty; urgency=medium
+
+  * debian/control.in: use yelp-tools that's where the macro is defined
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 12 Dec 2013 18:09:50 +0100
+
+gedit-plugins (3.10.1-0ubuntu2) trusty; urgency=medium
+
+  * debian/control.in: build-depends on itstool
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 12 Dec 2013 18:04:02 +0100
+
+gedit-plugins (3.10.1-0ubuntu1) trusty; urgency=medium
+
+  * New upstream version
+  * debian/control.in:
+    - updated gedit, gtk, gtksourceview requirements
+  * debian/patches/mark-git-plugin-translatable.patch: 
+    - dropped, included in the new version
+
+ -- Sebastien Bacher <seb128@ubuntu.com>  Thu, 12 Dec 2013 16:35:11 +0100
+
+gedit-plugins (3.8.3-2ubuntu1) saucy; urgency=low
+
+  * Merge from Debian to fix build issue. Remaining change:
+    - Depend on gir1.2-zeitgeist-2.0
+
+ -- Jeremy Bicha <jbicha@ubuntu.com>  Thu, 12 Sep 2013 18:26:50 -0400
+
+gedit-plugins (3.8.3-2) unstable; urgency=low
+
+  [ Jeremy Bicha ]
+  * Pass --no-ext-rename to dh_python3 and build-depend on minimum
+    dh-python version that supports that option (Closes: #721696)
+
+ -- Michael Biebl <biebl@debian.org>  Sat, 07 Sep 2013 03:12:42 +0200
+
+gedit-plugins (3.8.3-1) unstable; urgency=low
+
+  [ Jeremy Bicha ]
+  * Merge with Ubuntu
+  * Bump dh compat to 9 and use multiarch install directories
+  * New upstream release
+    - Note that the Dashboard plugin is broken until the new
+      libzeitgeist2 is packaged
+  * debian/control.in, debian/rules:
+    - Use Python 3
+  * debian/control.in:
+    - Bump build-deps on libpeas-dev and gedit-dev
+    - Build-depend on python-dbus-dev (Closes: #673852)
+    - Use Standards-Version 3.9.4
+    - Update homepage
+  * debian/patches/mark-git-plugin-translatable.patch:
+    - Allow the name and description fields to be translated for the new git
+      plugin
+
+  [ Thomas Bechtold ]
+  * New upstream release
+
+  [ Emilio Pozuelo Monfort ]
+  * debian/rules:
+    + Sort the list of plugins so that we have the same long
+      description on every architecture. Closes: #705663.
+
+  [ Andreas Moog ]
+  * debian/control.in: Explicitly build-depend on libdbus-1-dev to enable
+    synctex plugin
+
+ -- Michael Biebl <biebl@debian.org>  Thu, 01 Aug 2013 23:27:54 +0200
+
+gedit-plugins (3.4.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bump Build-Depends on libglib2.0-dev and libgtk-3-dev for GResource
+    support.
+  * Bump Standards-Version to 3.9.3.
+  * Transition to dh_python2.
+  * Tighten dependency on gedit using gnome:Version and gnome:nextVersion.
+  * Add Build-Depends on libvte-2.90-dev for the terminal plugin.
+  * Suggest zeitgeist-datahub, required by the dashboard plugin to get
+    recently and most used files.
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 23 Apr 2012 01:07:05 +0200
+
+gedit-plugins (3.2.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/watch:
+    - Track .xz tarballs.
+  * debian/control.in:
+    - Bump Build-Depends on libpeas-dev to (>= 1.0.0).
+    - Bump Build-Depends on gedit-dev to (>= 3.2.1).
+    - Bump Depends on gedit to (>= 3.2).
+    - Set pkg-gnome-maintainers@lists.alioth.debian.org as Maintainer.
+
+ -- Michael Biebl <biebl@debian.org>  Sun, 20 Nov 2011 23:52:47 +0100
+
+gedit-plugins (3.0.6-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Michael Biebl <biebl@debian.org>  Mon, 08 Aug 2011 02:01:55 +0200
+
+gedit-plugins (3.0.5-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/watch: Switch to .bz2 tarballs.
+  * Bump debhelper compatibility level to 8. Update Build-Depends accordingly.
+
+ -- Michael Biebl <biebl@debian.org>  Fri, 22 Jul 2011 20:45:45 +0200
+
+gedit-plugins (3.0.3-1) experimental; urgency=low
+
+  [ YunQiang Su ]
+  * New upstream stable release.
+  * Update build-dependencies accordingly.
+  * Update dependencies to use gir modules for Python.
+  * Switch to 3.0 source format.
+  * Update standards version.
+
+  [ Josselin Mouette ]
+  * Pass the correct paths to dh_pysupport.
+
+ -- Josselin Mouette <joss@debian.org>  Thu, 02 Jun 2011 19:15:39 +0200
+
+gedit-plugins (2.30.0-1) unstable; urgency=low
+
+  * New upstream stable release:
+    + debian/control.in:
+      - Update (build-) dependencies.
+
+ -- Sebastian Dröge <slomo@debian.org>  Sat, 10 Apr 2010 08:44:24 +0200
+
+gedit-plugins (2.28.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/control.in:
+    - bumped standards-version to 3.8.3. No changes needed.
+  * debian/copyright:
+    - added missing copyright holders.
+  * debian/patches:
+    - removed, we have no patches to apply.
+  * debian/rules:
+    - simple-patchsys include removed.
+
+ -- Andrea Veri <andrea.veri89@gmail.com>  Sun, 04 Oct 2009 13:06:58 +0200
+
+gedit-plugins (2.27.1-1) unstable; urgency=low
+
+  * Add epochs for vte dependencies.
+  * New upstream release.
+
+ -- Josselin Mouette <joss@debian.org>  Fri, 25 Sep 2009 20:35:54 +0200
+
+gedit-plugins (2.26.2-1) unstable; urgency=low
+
+  * debian/control.in: add missing comma in build-dependencies to fix
+    FTBFS due to an stricter dpkg. Closes: #536940.
+  * Standards-Version is 3.8.2, no changes needed.
+  * Add homepage and Vcs-* fields.
+  * New upstream release.
+    - Remove no longer needed gnome-doc-utils build dependency.
+
+ -- Emilio Pozuelo Monfort <pochu@ubuntu.com>  Tue, 11 Aug 2009 18:44:25 +0200
+
+gedit-plugins (2.26.1-1) unstable; urgency=low
+
+  [ Luca Bruno ]
+  * New upstream release. Closes: #518886
+    + Now uses libgucharmap2-dev. Closes: #523935
+  * debian/control.in:
+    - Update Standards-Version to 3.8.1, no additional changes needed.
+
+  [ Josselin Mouette ]
+  * Switch to python-support.
+  * Remove useless ${python:Versions} for private modules.
+  * Only require python-gconf, not python-gnome2.
+  * Massive update to build-dependencies and dependencies.
+  * rules: fix the rule that generates the descriptions to not duplicate 
+    them.
+
+ -- Josselin Mouette <joss@debian.org>  Thu, 23 Apr 2009 00:20:03 +0200
+
+gedit-plugins (2.22.5-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Josselin Mouette <joss@debian.org>  Fri, 14 Nov 2008 16:31:42 +0100
+
+gedit-plugins (2.22.2-1) unstable; urgency=low
+
+  * New upstream bugfix release:
+    + debian/control.in:
+      - Build depend on intltool (>= 0.35) as the build system requires
+        intltool-update.
+
+ -- Sebastian Dröge <slomo@ubuntu.com>  Sun, 20 Apr 2008 17:22:07 +0200
+
+gedit-plugins (2.22.1-1) unstable; urgency=low
+
+  * New upstream bugfix release.
+
+ -- Sebastian Dröge <slomo@debian.org>  Tue, 08 Apr 2008 13:23:14 +0200
+
+gedit-plugins (2.22.0-1) unstable; urgency=low
+
+  * New upstream stable release.
+  * debian/control.in:
+    + Update Standards-Version to 3.7.3, no additional changes needed.
+
+ -- Sebastian Dröge <slomo@debian.org>  Mon, 17 Mar 2008 00:32:49 +0100
+
+gedit-plugins (2.20.0-1) unstable; urgency=low
+
+  * New upstream release:
+    + Fixes FTBFS against gedit >= 2.20.0 (Closes: #447457).
+    + debian/control.in:
+      - Update build dependencies and dependencies.
+    + debian/patches/60_sessionsaver-window-typo-in-deactivate.patch:
+      - Dropped, merged upstream.
+
+ -- Sebastian Dröge <slomo@debian.org>  Thu, 25 Oct 2007 11:34:23 +0200
+
+gedit-plugins (2.18.0-2) unstable; urgency=low
+
+  * New patch, 60_sessionsaver-window-typo-in-deactivate, fixes Python error
+    when deactivating the plugin.
+
+ -- Loic Minier <lool@dooz.org>  Sun, 06 May 2007 16:54:52 +0200
+
+gedit-plugins (2.18.0-1) unstable; urgency=low
+
+  [ Loic Minier ]
+  * Drop superfluous uploaders include.
+
+  [ Sebastian Dröge ]
+  * Change libgucharmap5-dev build dependency to libgucharmap-dev.
+
+  [ Loic Minier ]
+  * New upstream stable release.
+    - Add deps on python-gobject, python-gnome2, python-glade2 for new plugins
+      imports.
+  * Build-depend on gnome-doc-utils instead of gnome-doc-tools.
+  * Set DISABLE_UPDATE_UPLOADERS; build-dep on gnome-pkg-tools >= 0.11.
+  * Add watch file.
+  * Upload to unstable.
+  * Add a get-orig-source target to retrieve the upstream tarball.
+
+ -- Loic Minier <lool@dooz.org>  Sun, 06 May 2007 16:09:43 +0200
+
+gedit-plugins (2.16.0-1) experimental; urgency=low
+
+  * Initial upload to Debian; target at experimental; closes: #367659.
+  * Set myself as Maintainer, GNOME team as Uploaders.
+  * Cleanup rules.
+  * Python transition.
+    - Build-depend on python-central (>= 0.5.6).
+    - Call dh_pycentral instead of dh_python.
+    - Add XS-Python-Version: >= 2.3 and XB-Python-Version: ${python:Versions}.
+  * Add superfluous build-deps on libgnomevfs2-dev (>= 1:2.16),
+    libbonobo2-dev (>= 2.16), and libbonoboui2-dev (>= 2.16) to help
+    autobuilders.
+  * Compute descriptions from .desktop files.
+  * Include debhelper before gnome; sigh.
+  * Include CDBS's utils.
+
+ -- Loic Minier <lool@dooz.org>  Mon, 12 Feb 2007 13:34:05 +0100
+
+gedit-plugins (2.16.0-0ubuntu1) edgy; urgency=low
+
+  * New upstream release:
+    - New Bracket Completion Plugin
+    - New and updated translations: sv, vi, ca.
+  * debian/control:
+    - bumped gedit, pygtk and python-gnome-desktop requirement.
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Fri,  8 Sep 2006 16:21:10 +0200
+
+gedit-plugins (2.15.5-0ubuntu1) edgy; urgency=low
+
+  * New upstream version:
+    New features and fixes:
+    - New Code Comment plugin
+    - Update to latest gedit 2.15 API 
+    - Fix plugin l10n
+    - Fixes to configure
+    - Various fixes.
+  * debian/control:
+    - updated gedit requirement
+
+ -- Sebastien Bacher <seb128@canonical.com>  Tue, 22 Aug 2006 15:58:56 +0200
+
+gedit-plugins (2.15.4-0ubuntu3) edgy; urgency=low
+
+  * debian/control:
+    - libgucharmap4-dev -> libgucharmap5-dev.
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Tue, 25 Jul 2006 10:53:23 +0200
+
+gedit-plugins (2.15.4-0ubuntu2) edgy; urgency=low
+
+  * debian/control:
+    - Build-Depends on gnome-doc-utils (>= 0.3.2)
+
+ -- Sebastien Bacher <seb128@canonical.com>  Thu, 13 Jul 2006 16:30:00 +0200
+
+gedit-plugins (2.15.4-0ubuntu1) edgy; urgency=low
+
+  * New upstream release:
+    - Fixes to configure
+    - Terminal setting proper sensitivity to copy button
+    - New and updated translations: sv, es, hu, de, fi, ru.
+  * debian/patches/99_remove_python-vte_check.patch:
+    - dropped, fixed upstream.
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Tue, 11 Jul 2006 14:39:28 +0200
+
+gedit-plugins (2.15.3-0ubuntu1) edgy; urgency=low
+
+  * Initial release.
+
+ -- Daniel Holbach <daniel.holbach@ubuntu.com>  Mon, 10 Jul 2006 11:50:19 +0200
+

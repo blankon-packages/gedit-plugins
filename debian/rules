@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+
+DISABLE_UPDATE_UPLOADERS := 1
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/gnome.mk
+include /usr/share/cdbs/1/rules/utils.mk
+include /usr/share/gnome-pkg-tools/1/rules/uploaders.mk
+include /usr/share/gnome-pkg-tools/1/rules/gnome-version.mk
+-include /usr/share/gnome-pkg-tools/1/rules/gnome-get-source.mk
+
+DEB_CONFIGURE_EXTRA_FLAGS += \
+	--enable-python \
+	--libdir=\$${prefix}/lib/$(DEB_HOST_MULTIARCH)
+
+DEB_PYTHON3_MODULE_PACKAGES := gedit-plugins
+
+clean::
+	plugins_desc_script="/^ @PLUGINS_DESCRIPTION@\$$/ c \\$$(find . -iname \*.desktop.in.in | sort | while read f; do cat $$f | awk -f debian/desktop2description.awk; done | sed 's/.*/  &\\/'; echo " ")"; \
+		sed \
+			-e "s#@GNOME_TEAM@#$(UPLOADERS)#g" \
+			-e "$$plugins_desc_script" \
+			debian/control.in > debian/control
+
+binary-install/gedit-plugins::
+	dh_python3 --shebang=/usr/bin/python3 -p$(cdbs_curpkg) --no-ext-rename /usr/lib/$(DEB_HOST_MULTIARCH)/gedit/plugins
+	dh_python3 --shebang=/usr/bin/python3 -p$(cdbs_curpkg) --no-ext-rename /usr/share/gedit/plugins
+	find debian/$(cdbs_curpkg) -name '*.la' -delete
+
